@@ -1,6 +1,7 @@
 import express from 'express';
 import { initializeDatabase } from './data-source';
 import Transactions from './routes/Transactions';
+import Users from './routes/Users';
 import { startSync } from './services/sync';
 
 const app = express();
@@ -10,6 +11,7 @@ const startServer = async () => {
     await initializeDatabase();
 
     app.use(Transactions);
+    app.use('/users', Users);
     startSync();
 
     app.listen(3000, (): void => console.log('Server is running on port 3000'));
