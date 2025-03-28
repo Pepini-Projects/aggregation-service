@@ -35,8 +35,8 @@ const generateTransactions = (count: number, maxAge: number = 30000): void => {
   }
 };
 
-// Generate initial 5000 transactions with a max age of 5 minutes
-generateTransactions(5000, 5 * 60 * 1000);
+// Generate initial 5000 transactions with a max age of 2 minutes
+generateTransactions(5000, 2 * 60 * 1000);
 
 // Add new transactions every 10 seconds;
 setInterval((): void => {
